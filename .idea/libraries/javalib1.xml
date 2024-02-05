@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="javalib1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../sp17_skeleton/javalib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../sp17_skeleton/javalib" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../sp17_skeleton/javalib" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../sp17_skeleton/javalib" recursive="false" type="SOURCES" />
+  </library>
+</component>

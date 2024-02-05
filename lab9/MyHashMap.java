@@ -174,16 +174,16 @@ public class MyHashMap<K, V> implements Map61B<K, V>, Iterable<K> {
             K returnKey = this.currentPair.key; // set aside the return value
             if (this.boxIndex + 1 < boxes[currentBox].size()) { // if there are more things in this box, move to the next
                 this.boxIndex += 1;
-            } else { // move to the next nonempty box and reset the boxIndex to 0
-                if (this.currentBox + 1 == boxes.length) {
-                    // NO ACTION REQUIRED, YOU HAVE REACHED THE LAST ITEM IN THE ITERATOR
-                } else {
-                    this.currentBox += 1;
-                    while (boxes[currentBox].isEmpty()) {
-                        currentBox += 1;
-                    }
-                    this.boxIndex = 0;
+            } else if (this.currentBox + 1 != boxes.length) { // move to the next nonempty box and reset the boxIndex to 0
+                /* note that if currentBox + 1 == boxes.length and previous if statement is not true
+                    then you have reached the last item and no further action is required. You just skip to the
+                    next step outside the if/(if else) statements
+                 */
+                this.currentBox += 1;
+                while (boxes[currentBox].isEmpty()) {
+                    currentBox += 1;
                 }
+                this.boxIndex = 0;
             } // you're now at the correct box and index for the next Pair
             this.currentPair = boxes[currentBox].get(boxIndex);
             counter += 1;
